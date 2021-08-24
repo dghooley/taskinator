@@ -1,4 +1,3 @@
-
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
@@ -15,10 +14,9 @@ var taskFormHandler = function (event) {
 
     // send it as an argument to createTaskEl
     createTaskEl(taskDataObj);
-
 };
 
-var createTaskEl = function(taskDataObj){
+var createTaskEl = function(taskDataObj) {
      // create list item
      var listItemEl = document.createElement("li");
      listItemEl.className = "task-item";
