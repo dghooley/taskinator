@@ -1,16 +1,20 @@
 var taskIdCounter = 0;
-
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 var tasksInProgressEl = document.querySelector("#tasks-in-progress");
 var tasksCompletedEl = document.querySelector("#tasks-completed");
 var pageContentEl = document.querySelector("#page-content");
+var tasks = [];
 
 var taskFormHandler = function(event) {
   event.preventDefault();
   var taskNameInput = document.querySelector("input[name='task-name']").value;
   var taskTypeInput = document.querySelector("select[name='task-type']").value;
-
+  var taskDataObj = {
+    name: taskNameInput,
+    type: taskTypeInput,
+    status: "to do"
+  }
   // check if inputs are empty (validate)
   if (taskNameInput === "" || taskTypeInput === "") {
     alert("You need to fill out the task form!");
@@ -35,6 +39,8 @@ var taskFormHandler = function(event) {
     };
 
     createTaskEl(taskDataObj);
+    console.log(taskDataObj);
+    console.log(taskDataObj.status);
   }
 };
 
